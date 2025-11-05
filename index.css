@@ -1,0 +1,73 @@
+
+body {
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(270deg, blue, yellow, pink, green);
+  background-size: 800% 800%;
+  animation: gradientMove 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.container {
+  width: 350px;
+  height: 320px;
+  border: 2px solid black;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.5s, box-shadow 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 1);
+}
+
+
+#clock {
+  font-size: 65px;
+  color: #fff;
+  text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+  font-family: 'Orbitron', sans-serif;
+  animation: glowPulse 1.5s ease-in-out infinite alternate;
+}
+
+#toggleFormatBtn {
+  background: linear-gradient(90deg, #00ffff, #00ff99);
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00ffff;
+  transition: 0.3s;
+}
+
+#toggleFormatBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #00ffcc;
+}
+
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; }
+  100% { text-shadow: 0 0 20px #00ff99, 0 0 40px #00ff99; }
+}
